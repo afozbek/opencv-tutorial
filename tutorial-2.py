@@ -9,7 +9,8 @@ fourcc = cv2.VideoWriter_fourcc(*"XVID")  # *"XVID" ???
 out = cv2.VideoWriter("output.avi", fourcc, 20.0, (640, 480))
 
 while True:
-    ret, frame = cap.read()
+    # current frame of the video
+    _, frame = cap.read()
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     out.write(frame)

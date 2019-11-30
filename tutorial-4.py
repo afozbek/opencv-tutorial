@@ -9,7 +9,6 @@ img = cv2.imread("furkan.jpg", cv2.IMREAD_COLOR)
 img[55, 55] = [255, 255, 255]
 px = img[55, 55]
 
-
 # Region of Image
 # Converting some pixels to white
 img[1400:1600, 1400:1600] = [255, 0, 0]

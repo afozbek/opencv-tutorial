@@ -18,4 +18,11 @@ cv2.destroyAllWindows()
 # plt.plot([50, 100], [80,])
 # plt.show()
 
-cv2.imwrite("furkan.png", img)
+# cv2.imwrite gets an image as an argument and write as an image
+# it returs true or false if the file saved
+isSaved = cv2.imwrite("furkan.png", img)
+
+if isSaved:
+    print("Image is saved successfully")
+else:
+    print("Something went wrong!")

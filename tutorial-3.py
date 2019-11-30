@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt  # RGB
 
 """Drawing and Writing on Image"""
 
+# grayscaled image
 img = cv2.imread("furkan.jpg", cv2.IMREAD_GRAYSCALE)
 
 # Çizgi, elips silindir, veya text bile yazabiliriz. Bunu kendi projemizde kullanabiliriz
@@ -22,5 +23,6 @@ cv2.putText(img, "Deep Crash", (520, 310), font,
             5, (255, 255, 255), 5, cv2.LINE_AA)
 
 cv2.imshow("img", img)
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()

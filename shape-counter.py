@@ -8,7 +8,14 @@ ap.add_argument("-i", "--input", required=True,
                 help="path to input image")
 ap.add_argument("-o", "--output", required=True,
                 help="path to output image")
+
+# DICTIONARY
 args = vars(ap.parse_args())
+
+# args = {
+#     "input": "/Users/furkan.ozbek/Projects/opencv-tutorial/furkan.jpg",
+#     "output": "/Users/furkan.ozbek/Projects/opencv-tutorial/o.jpg"
+# }
 
 # load the input image from disk
 image = cv2.imread(args["input"])
@@ -16,13 +23,10 @@ image = cv2.imread(args["input"])
 # convert the image to grayscale, blur it, and threshold it
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 blurred = cv2.GaussianBlur(gray, (5, 5), 0)
-thresh = cv2.threshold(blurred, 60, 255, cv2.THRESH_BINARY)[1]
 
-# cv2.imshow("gray", gray)
-# cv2.imshow("blurred", blurred)
-# cv2.imshow("thresh", thresh)
-
-# cv2.waitKey(0)
+# thresh returns tupple
+thresh = cv2.threshold(blurred, 60, 255, cv2.THRESH_BINARY)
+thresh = thresh[1]
 
 cnts = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
                         cv2.CHAIN_APPROX_SIMPLE)

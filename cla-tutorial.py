@@ -6,10 +6,15 @@ import argparse
 
 ap = argparse.ArgumentParser()
 
-ap.add_argument("-n", "--name", required=True, help="isminiz")
+ap.add_argument("-n", "--name", required=True, help="Your Name")
+ap.add_argument("-a", "--age", required=False, help="Your Age")
 
+# Command Line argumentleri dictionary yapan method vars
 args = vars(ap.parse_args())
 
 print(args)
 
-print("Hi there {}".format(args["name"]))
+if args["age"]:
+    print("Hi there {}. Your age is {}".format(args["name"], args["age"]))
+else:
+    print("Hi there {}".format(args["name"]))

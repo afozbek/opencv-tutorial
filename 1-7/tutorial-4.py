@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt  # RGB
 
 img = cv2.imread("furkan.jpg", cv2.IMREAD_COLOR)
 
-img[55, 55] = [255, 255, 255]
-px = img[55, 55]
+# img[55, 55] = [255, 255, 255]  # white
+# px = img[55, 55]
 
 # Region of Image
 # Converting some pixels to white

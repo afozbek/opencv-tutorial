@@ -18,7 +18,7 @@ pts = np.array([[10, 5], [20, 30], [70, 20], [50, 10]], np.int32)
 
 cv2.polylines(img, [pts], True, (0, 255, 255), 5)
 
-font = cv2.FONT_HERSHEY_SIMPLEX
+font = cv2.FONT_HERSHEY_DUPLEX
 cv2.putText(img, "Deep Crash", (520, 310), font,
             5, (255, 255, 255), 5, cv2.LINE_AA)
 

@@ -3,6 +3,7 @@ import numpy as np
 import os
 
 """Haar Cascade Object Detection Face & Eye"""
+
 wdir = os.getcwd()
 # multiple cascades: https://github.com/Itseez/opencv/tree/master/data/haarcascades
 

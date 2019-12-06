@@ -1,9 +1,17 @@
 import cv2                       # BGR
 import numpy as np
+import os
+import argparse
 
 """MOG Background Reduction"""
 
-cap = cv2.VideoCapture(0)
+ap = argparse.ArgumentParser()
+
+ap.add_argument("-f", "--file", required=True, help="The path of the data")
+
+args = vars(ap.parse_args())
+
+cap = cv2.VideoCapture(os.getcwd() + args["file"])
 fgbg = cv2.createBackgroundSubtractorMOG2()
 
 while True:
